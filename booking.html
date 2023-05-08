@@ -1,0 +1,110 @@
+
+<html>
+<style>
+body {
+  width: 500px;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+div.elem-group {
+  margin: 20px 0;
+}
+
+div.elem-group.inlined {
+  width: 49%;
+  display: inline-block;
+  float: left;
+  margin-left: 1%;
+}
+
+label {
+  display: block;
+  font-family: 'Nanum Gothic';
+  padding-bottom: 10px;
+  font-size: 1.25em;
+}
+
+input, select, textarea {
+  border-radius: 2px;
+  border: 2px solid #777;
+  box-sizing: border-box;
+  font-size: 1.25em;
+  font-family: 'Nanum Gothic';
+  width: 100%;
+  padding: 10px;
+}
+
+div.elem-group.inlined input {
+  width: 95%;
+  display: inline-block;
+}
+
+textarea {
+  height: 250px;
+}
+
+hr {
+  border: 1px dotted #ccc;
+}
+
+button {
+  height: 50px;
+  background: orange;
+  border: none;
+  color: white;
+  font-size: 1.25em;
+  font-family: 'Nanum Gothic';
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  border: 2px solid black;
+}
+</style>
+<body background="C:\Users\Vamsi\OneDrive\Desktop\book.jpg">
+
+
+<form action="reservation.php" method="post">
+  <div class="elem-group">
+    <label for="name">Your Name</label>
+    <input type="text" id="name" name="visitor_name" placeholder="NAME" pattern=[A-Z\sa-z]{3,20} required>
+  </div>
+  <div class="elem-group">
+    <label for="email">Your E-mail</label>
+    <input type="email" id="email" name="visitor_email" placeholder="ABCD.@email.com" required>
+  </div>
+  <div class="elem-group">
+    <label for="phone">Your Phone</label>
+    <input type="tel" id="phone" name="visitor_phone" placeholder="498-348-3872" pattern=(\d{3})-?\s?(\d{3})-?\s?(\d{4}) required>
+  </div>
+  <hr>
+  <div class="elem-group inlined">
+    <label for="checkin-date">Booking Date</label>
+    <input type="date" id="Booking-date" name="Booking" required>
+  </div>
+  <div class="elem-group inlined">
+    <label for="esimation-date">estimation Date</label>
+    <input type="date" id="estimation-date" name="estimation" required>
+  </div>
+  <div class="elem-group">
+    <label for="service-selection">Select books</label>
+    <select id="service-selection" name="Service_preference" required>
+        <option value="">Choose a Service from the List</option>
+        <option value="Oil and Coolant Levels">NOVELS</option>
+        <option value="CATCH-22">CATCH-22</option>
+        <option value="LOST NAME">LOST NAME</option>
+        <option value="GOOD DOG">GOOD DOG</option>
+        <option value="LAZEY MAN">LAZY MAN</option>
+        <option value="ANIME">ANIME</option>
+    </select>
+  </div>
+  <hr>
+  <div class="elem-group">
+    <label for="message">Anything Else?</label>
+    <textarea id="message" name="visitor_message" placeholder="Tell us anything else that might be important." required></textarea>
+  </div>
+  <button type="submit">Book The Services</button>
+</form>
+</html>
